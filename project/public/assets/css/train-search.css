@@ -1,0 +1,76 @@
+.train-search-form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .train-search-form .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .train-search-form label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.3rem;
+  }
+  
+  .train-search-form .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  .train-search-form .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .train-search-form .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .results-container {
+    margin-top: 1.5rem;
+  }
+  
+  .ticket-item {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .ticket-item h4 {
+    margin: 0;
+  }
+  
+  .select-ticket-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .select-ticket-btn:hover {
+    background-color: #0056b3;
+  }
+  

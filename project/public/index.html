@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SereniTrain </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/train-search.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">SereniTrain</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home<br></a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="get-a-quote.html">Get a Quote</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/world-dotted-map.png" alt="" class="hero-bg" data-aos="fade-in">
+
+      <div class="container">
+        <div class="row gy-4 d-flex justify-content-between">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h2 data-aos="fade-up">Instant Refunds for a Worry-Free Journey</h2>
+            <p data-aos="fade-up" data-aos-delay="100">SereniTrain acts as a trusted intermediary between you and the train company, working together to ensure seamless travel. We automatically detect if refund conditions are met, and if so, the reimbursement is processed instantly. SereniTrain handles all communication with the train company, providing you with complete, transparent tracking of your refunds.</p>
+
+            <form id="train-search-form" class="train-search-form d-flex align-items-stretch">
+              <div class="form-group">
+                <label for="departure-city">Departure City</label>
+                <input type="text" id="departure-city" class="form-control" placeholder="e.g., Paris" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="arrival-city">Arrival City</label>
+                <input type="text" id="arrival-city" class="form-control" placeholder="e.g., Lyon" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="departure-date">Date</label>
+                <input type="date" id="departure-date" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="departure-time">Departure Time</label>
+                <input type="time" id="departure-time" class="form-control">
+              </div>
+              <form id="train-search-form">
+                <!-- Input fields here -->
+                <button type="submit" class="btn btn-primary">Search</button>
+              </form>
+            </form>
+            
+            <div id="results-container" class="results-container"></div>
+
+
+            <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="col-12 text-center">
+                <div class="stats-item w-100 h-100">
+                  <p>Across all train companies on the continent, over <strong>500,000 partial or full refunds</strong> are eligible each year due to delays or cancellations. Maximize your benefits – trust SereniTrain to handle your refunds smoothly and ensure you’re covered!</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+            <img src="assets/img/hero-img.svg" class="img-fluid mb-3 mb-lg-0" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Featured Services Section -->
+<section id="featured-services" class="featured-services section">
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon flex-shrink-0"><i class="fa-solid fa-train"></i></div>
+        <div>
+          <h4 class="title">Automatic Refunds</h4>
+          <p class="description">Our system automatically issues refunds if your train is delayed or canceled according to the operator’s criteria, so you can travel with peace of mind.</p>
+          <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon flex-shrink-0"><i class="fa-solid fa-ticket-alt"></i></div>
+        <div>
+          <h4 class="title">Transparent Tracking</h4>
+          <p class="description">Follow your journey status and refund updates in real-time. We provide a simple, transparent view so you know exactly where things stand.</p>
+          <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon flex-shrink-0"><i class="fa-solid fa-handshake"></i></div>
+        <div>
+          <h4 class="title">Trusted Partnerships</h4>
+          <p class="description">We collaborate directly with train operators to streamline the refund process, ensuring your experience is smooth and reliable every time.</p>
+          <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div><!-- End Service Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Featured Services Section -->
+
+
+<!-- Call To Action Section -->
+<section id="call-to-action" class="call-to-action section dark-background">
+
+  <img src="assets/img/a.jpg" alt="Travel with Confidence on SereniTrain">
+
+  <div class="container">
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-xl-10">
+        <div class="text-center">
+          <h3>Experience Worry-Free Travel with Instant Refunds</h3>
+          <p>Join SereniTrain today and travel with confidence. Our platform automatically detects and processes refunds in case of delays or cancellations, letting you focus on your journey, not the hassles.</p>
+          <a class="cta-btn" href="get-a-quote.html">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section><!-- /Call To Action Section -->
+
+
+<!-- Features Section -->
+<section id="features" class="features section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <span>Our Features</span>
+    <h2>Why Choose SereniTrain</h2>
+    <p>Discover the key features that make your train travel secure, reliable, and stress-free.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+        <img src="assets/img/b.png" class="img-fluid" alt="Instant Refunds">
+      </div>
+      <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+        <h3>Instant Refunds for Delays and Cancellations</h3>
+        <p class="fst-italic">
+          In case of unexpected delays or cancellations, SereniTrain processes refunds immediately from our own funds, ensuring you’re not left waiting.
+        </p>
+        <ul>
+          <li><i class="bi bi-check"></i><span> Direct refund to your wallet when conditions are met.</span></li>
+          <li><i class="bi bi-check"></i><span> No need to wait for the train company’s processing time.</span></li>
+          <li><i class="bi bi-check"></i><span> Hassle-free refunds initiated by our system automatically.</span></li>
+        </ul>
+      </div>
+    </div><!-- Features Item -->
+
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+        <img src="assets/img/d.png" class="img-fluid" alt="Easy to Use">
+      </div>
+      <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+        <h3>Simple, User-Friendly Tracking</h3>
+        <p class="fst-italic">
+          Our platform provides a clear and simple interface to track your journey and refund status at any time.
+        </p>
+        <p>
+          Whether your trip is running smoothly or if there’s an issue, you’ll receive real-time updates and full transparency on your refund process.
+        </p>
+      </div>
+    </div><!-- Features Item -->
+
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+        <img src="assets/img/f.jpg" class="img-fluid" alt="Reliable Support">
+      </div>
+      <div class="col-md-7" data-aos="fade-up">
+        <h3>Reliable Support and Partnerships</h3>
+        <p>SereniTrain collaborates closely with multiple train operators, ensuring that our services are synchronized with their operations for smooth and reliable processing.</p>
+        <ul>
+          <li><i class="bi bi-check"></i> <span> Strong partnerships for efficient claim processing.</span></li>
+          <li><i class="bi bi-check"></i> <span> Continuous support to address any travel or refund issues.</span></li>
+          <li><i class="bi bi-check"></i> <span> Dedicated to improving your travel experience with each journey.</span></li>
+        </ul>
+      </div>
+    </div><!-- Features Item -->
+
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
+        <img src="assets/img/e.jpg" class="img-fluid" alt="Blockchain Security">
+      </div>
+      <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
+        <h3>Blockchain-Powered Security</h3>
+        <p class="fst-italic">
+          SereniTrain leverages blockchain technology to ensure secure and transparent transactions for every ticket purchase and refund.
+        </p>
+        <p>
+          With blockchain integration, your payments and refunds are processed with the highest level of security, eliminating any risk of fraud or data tampering.
+        </p>
+      </div>
+    </div><!-- Features Item -->
+
+  </div>
+
+</section><!-- /Features Section -->
+
+      <!-- Frequently Asked Questions Section -->
+      <section id="faq" class="faq section">
+        <div class="container section-title" data-aos="fade-up">
+          <span>Frequently Asked Questions</span>
+          <h2>Your Questions Answered</h2>
+          <p>Find answers to common questions about SereniTrain and how it benefits you.</p>
+        </div>
+  
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="faq-container">
+  
+                <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>How does SereniTrain detect if I'm eligible for a refund?</h3>
+                  <div class="faq-content">
+                    <p>Our system actively monitors train journeys and checks if they meet refund criteria set by train companies, such as delays of 30 minutes or more. If conditions are met, we automatically initiate the refund process.</p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+  
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>How quickly will I receive a refund if my trip qualifies?</h3>
+                  <div class="faq-content">
+                    <p>Once eligibility is confirmed, refunds are processed instantly and sent directly to your payment method. You will also receive a notification confirming the transaction.</p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+  
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>What information can I see about my journey and refunds?</h3>
+                  <div class="faq-content">
+                    <p>Through our platform, you can view the current status of your journey and any updates on potential refunds. If everything is on schedule, we’ll confirm it. If a refund is issued, we’ll keep you informed every step of the way.</p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+  
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>Does SereniTrain work with all train companies?</h3>
+                  <div class="faq-content">
+                    <p>We partner with a growing network of train operators to expand our services and enhance our coverage. Check our list of partnered companies to confirm if your provider is included.</p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+  
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>Is there a cost for using SereniTrain's refund service?</h3>
+                  <div class="faq-content">
+                    <p>SereniTrain is free to use for travelers. We work directly with train companies to bring you seamless service without extra fees.</p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <!-- About Section -->
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">SereniTrain</span>
+          </a>
+          <p>SereniTrain - Travel with peace of mind. We ensure that you receive automatic refunds for delays and cancellations, so you can enjoy a stress-free journey.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        
+        <!-- Useful Links -->
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Additional Services -->
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="refunds.html">Automatic Refunds</a></li>
+            <li><a href="tracking.html">Journey Tracking</a></li>
+            <li><a href="support.html">Customer Support</a></li>
+            <li><a href="partners.html">Trusted Partnerships</a></li>
+            <li><a href="security.html">Blockchain Security</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Paris, France</p>
+          <p><strong>Email:</strong> <span>contact@serenitrain.com</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Copyright Section -->
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">SereniTrain</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/search-tickets.js" defer></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Booking Summary - SereniTrain</title>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Additional custom styling */
+    .ticket-summary {
+      background-color: #f9f9f9;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+    }
+
+    .ticket-summary h4 {
+      font-size: 1.4em;
+      color: #007bff;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .ticket-info p {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+
+    .ticket-info .icon {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .btn-success {
+      margin-top: 20px;
+      font-size: 1.2em;
+      width: 100%;
+    }
+
+    #confirmation-message {
+      margin-top: 20px;
+      font-size: 1.1em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="text-center my-4">
+    <h1>Booking Summary</h1>
+    <p>Review your ticket details below</p>
+  </header>
+  <main class="container">
+    <div id="summary-container"></div>
+    <!-- Message display area -->
+    <div id="confirmation-message" class="mt-4"></div>
+  </main>
+
+  <!-- Button to confirm booking -->
+  <div class="text-center">
+    <button id="confirmBooking" class="btn btn-success">Confirm Booking</button>
+  </div>
+
+  <!-- Custom JavaScript for booking summary actions -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const summaryContainer = document.getElementById("summary-container");
+      const selectedTicket = JSON.parse(localStorage.getItem("selectedTicket"));
+
+      if (!selectedTicket) {
+        summaryContainer.innerHTML = "<p>No ticket selected. Please go back and choose a ticket.</p>";
+        return;
+      }
+
+      // Display selected ticket details
+      summaryContainer.innerHTML = `
+        <div class="ticket-summary">
+          <h4>${selectedTicket.company} - Train from ${selectedTicket.departureCity} to ${selectedTicket.arrivalCity}</h4>
+          <div class="ticket-info">
+            <p><span class="icon">📅 Date:</span> ${selectedTicket.date}</p>
+            <p><span class="icon">🕒 Departure Time:</span> ${selectedTicket.departureTime}</p>
+            <p><span class="icon">💲 Price:</span> ${selectedTicket.price} XRP</p>
+            <p><span class="icon">🎫 Ticket ID:</span> ${selectedTicket.id}</p>
+          </div>
+        </div>
+      `;
+    });
+
+    // Event listener for booking confirmation
+    document.getElementById("confirmBooking").addEventListener("click", async () => {
+      const selectedTicket = JSON.parse(localStorage.getItem("selectedTicket"));
+      const confirmationMessage = document.getElementById("confirmation-message");
+
+      try {
+        // Send request to backend to create wallet, set up escrow, and process payment
+        const response = await fetch("http://localhost:5000/api/create-escrow", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ticketPrice: selectedTicket.price,
+            userId: selectedTicket.userId, // User ID or other unique identifier
+            ticketId: selectedTicket.id    // Unique ticket ID for tracking
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          // Display success message
+          confirmationMessage.innerHTML = `<div class="alert alert-success">Payment held in escrow. Your booking is confirmed!</div>`;
+        } else {
+          // Display error message
+          confirmationMessage.innerHTML = `<div class="alert alert-danger">Failed to process booking: ${result.error}</div>`;
+        }
+      } catch (error) {
+        console.error("Failed to connect or process booking:", error);
+        confirmationMessage.innerHTML = `<div class="alert alert-danger">Failed to connect or process booking.</div>`;
+      }
+    });
+  </script>
+</body>
+</html>
